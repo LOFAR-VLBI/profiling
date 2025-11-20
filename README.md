@@ -46,11 +46,11 @@ In `jobs` and `job_types` the field names have the following meanings:
 |average_wait|Average CPU time reserved for but not consumed by the job(s).|
 |min_wait|Minimum CPU time reserved for but not consumed by the job(s).|
 |max_wait|Maximum CPU time reserved for but not consumed by the job(s).|
-|total_memory|Total memory in B consumed by the job(s).|
-|median_memory|Median memory in B consumed by the job(s).|
-|average_memory|Maximum memory in B consumed by the job(s).|
-|min_memory|Minimum memory in B consumed by the job(s).|
-|max_memory|Maximum memory in B consumed by the job(s).|
+|total_memory|Total memory in kB consumed by the job(s).|
+|median_memory|Median memory in kB consumed by the job(s).|
+|average_memory|Maximum memory in kB consumed by the job(s).|
+|min_memory|Minimum memory in kB consumed by the job(s).|
+|max_memory|Maximum memory in kB consumed by the job(s).|
 |total_disk|Total disk usage by the job(s).|
 |median_disk|Median disk usage by the job(s).|
 |average_disk|Maximum disk usage by the job(s).|
