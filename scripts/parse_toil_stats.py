@@ -37,6 +37,10 @@ for name, job in data["job_types"].items():
         max_cpu_total_name = name
 
 print("\n== Summary ==")
+print("Total core hours used by workflow:")
+print(f"{data['jobs']['total_clock']/3600:.3f} h used")
+print(f"{data['jobs']['total_wait']/3600:.3f} h wait")
+print(f"{(data['jobs']['total_clock']/3600 + data['jobs']['total_wait']/3600):.3f} h used+wait")
 print(f"Max RAM of {max_ram/1e6:.3f}GB used by {max_ram_name}")
 print(f"Max CPU hours of {max_cpu/3600:.3f}h used by {max_cpu_name}")
 print(f"Max CPU hours of {max_cpu_wait/3600:.3f}h spent waiting by {max_cpu_wait_name}")
