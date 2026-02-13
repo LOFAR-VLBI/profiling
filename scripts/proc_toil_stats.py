@@ -1,4 +1,4 @@
-import json,pandas as pd,os,sys,csv,ast,numpy as np
+import json,pandas as pd,os,sys,csv,ast,numpy as np,shutil
 INFILE = sys.argv[1]
 with open(INFILE, encoding='utf-8-sig') as f_input:
     df = pd.read_json(f_input)
@@ -26,6 +26,7 @@ with open(csvfile,mode='r') as csv_file:
 order = np.argsort(fnum[:,0])[::-1]
 fname = fname[order]
 fnum = fnum[order]
+print(" "*55+"Job"+" "*2+"| Total time (m) | Total clock (m) | Total wait (m) | Total memory (Mb)")
 for i in range(len(fname)):
-     print('%60s %8.3f %8.3f %9.3f %10d'%(fname[i],fnum[i,0],fnum[i,1],\
-                                          fnum[i,2],int(fnum[i,3])))
+     print('%60s     %8.3f          %8.3f        %9.3f      %10d'%(fname[i],fnum[i,0]/60,fnum[i,1]/60,fnum[i,2]/60,int(fnum[i,3])/1e3))
+
