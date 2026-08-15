@@ -21,6 +21,9 @@ max_cpu_total_name = ""
 max_cores = 0
 max_cores_name = ""
 
+max_walltime = 0
+max_walltime_name = ""
+
 for name, job in data["job_types"].items():
     if job["max_memory"] > max_ram:
         max_ram = job["max_memory"]
@@ -43,6 +46,9 @@ for name, job in data["job_types"].items():
     if job["max_cores"]  > max_cores:
         max_cores = job["max_cores"]
         max_cores_name = name
+    if job["max_time"] > max_walltime:
+        max_walltime = job["max_time"]
+        max_walltime_name = name
 
 print("\n== Summary ==")
 print("Total core hours used by workflow:")
@@ -54,3 +60,4 @@ print(f"Max CPU hours of {max_cpu/3600:.3f}h used by {max_cpu_name}")
 print(f"Max CPU hours of {max_cpu_wait/3600:.3f}h spent waiting by {max_cpu_wait_name}")
 print(f"Max CPU hours of {max_cpu_total/3600:.3f}h (used+wait) by {max_cpu_total_name}")
 print(f"Max cores used {max_cores} by {max_cores_name}")
+print(f"Longest running job was {max_walltime_name} with {max_walltime/3600:.3f}h")
